@@ -1,0 +1,32 @@
+{
+	"name": "AvtexUMappingSample",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "CustomersForMappingSource",
+						"type": "DatasetReference"
+					},
+					"name": "MappingSource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "UpdatedContacts",
+						"type": "DatasetReference"
+					},
+					"name": "MappedContacts"
+				}
+			],
+			"transformations": [
+				{
+					"name": "CombineNames"
+				}
+			],
+			"script": "source(output(\n\t\tCustID as string,\n\t\tFirstName as string,\n\t\tLastName as string,\n\t\tFullName as string,\n\t\tGender as string,\n\t\tDOB as string,\n\t\tSuffix as string,\n\t\tEmail as string,\n\t\tTelephone as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tPostalCode as string,\n\t\tCountry as string,\n\t\tCreatedOn as string,\n\t\tPurchase as string,\n\t\tPurchaseDate as string,\n\t\tPurchase2 as string,\n\t\tPurchase2Date as string,\n\t\tPurchase3 as string,\n\t\tPurchase3Date as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: true,\n\tignoreNoFilesFound: false) ~> MappingSource\nMappingSource derive(CombineNames = concat(LastName, \", \", FirstName)) ~> CombineNames\nCombineNames sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['UpdatedContacts.csv'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> MappedContacts"
+		}
+	}
+}

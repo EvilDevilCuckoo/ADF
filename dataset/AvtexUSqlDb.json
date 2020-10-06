@@ -1,0 +1,108 @@
+{
+	"name": "AvtexUSqlDb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AvtexUSqlDbLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CustID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FirstName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FullName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Gender",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DOB",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Suffix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Telephone",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "State",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PostalCode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Purchase",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PurchaseDate",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Purchase2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Purchase2Date",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "Purchase3",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Purchase3Date",
+				"type": "datetime2",
+				"scale": 7
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ContactPurchases"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,103 @@
+{
+	"name": "CustomersForMappingSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "avtexublobs",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "OnlineContacts",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "OnlineContacts.xlsx",
+				"container": "sourcedata"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "CustID",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "FullName",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "DOB",
+				"type": "String"
+			},
+			{
+				"name": "Suffix",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "Telephone",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "PostalCode",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "String"
+			},
+			{
+				"name": "Purchase",
+				"type": "String"
+			},
+			{
+				"name": "PurchaseDate",
+				"type": "String"
+			},
+			{
+				"name": "Purchase2",
+				"type": "String"
+			},
+			{
+				"name": "Purchase2Date",
+				"type": "String"
+			},
+			{
+				"name": "Purchase3",
+				"type": "String"
+			},
+			{
+				"name": "Purchase3Date",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
